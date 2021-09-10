@@ -13,7 +13,7 @@ import styles from './Cards.module.css';
     return(
         <div className={styles.container}>
             <Grid container spacing={3} justify="center">
-                <Grid item component={Card} xs={12} md={3} className={cx(styles.card, styles.infected)}>
+                <Grid item component={Card} xs={12} md={3} className={cx(styles.card, styles.infected, styles.corner)}>
                     <CardContent>
                         <Typography color="textsecondary" gutterBottom>Infected</Typography>
                         <Typography variant="h5">
