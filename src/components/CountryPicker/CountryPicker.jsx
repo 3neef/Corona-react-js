@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react';
 
 import styles from './CountryPicker.module.css';
 import { fetchCountries } from '../../api';
-const CountryPicker  = () =>{
+const CountryPicker  = ({handleCountryChange}) =>{
     
     const [fetchedCountries, setFetchedCountries] = useState([]);
 
@@ -19,7 +19,7 @@ const CountryPicker  = () =>{
     // console.log(fetchedCountries);
     return(
      <FormControl>
-         <NativeSelect>
+         <NativeSelect defaultValue= "" onChange={(e) => handleCountryChange(e.target.value)}>
              <option value="global">Global</option>
              {fetchedCountries.map((country, i) => <option key={i} value={country}>{country}</option>)}
          </NativeSelect>
